@@ -8,7 +8,7 @@
  * Notes:
  *    Implimentation of a Counting Sort algorithm,
  *    sorts an array of positive ints in linear
- *    time of O(2(n + k)).
+ *    time of O(n + k).
  *
  */
 
