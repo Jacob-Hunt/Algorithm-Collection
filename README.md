@@ -10,4 +10,4 @@ A collection of various algorithm implimentations in C
 
 "largest_prime.c": Calculates the largest prime factor of a number using a modified Trial Division algorithm (https://en.wikipedia.org/wiki/Trial_division)
 
-"random_array.c": Generates and prints an array of random integers.
+"random_array.c": Generates and prints an array of random integers
