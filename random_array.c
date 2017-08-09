@@ -17,7 +17,7 @@
 #include <time.h>
 
 
-// * * * DEFINITIONS * * * //
+// * * * CONSTANT DEFINITIONS * * * //
 #define LENGTH 10
 #define RANGE 256
 
