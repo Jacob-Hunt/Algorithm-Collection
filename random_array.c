@@ -26,6 +26,8 @@
 void randomize(int *arr, int arrlen, int range);
 void printarr(int *arr, int arrlen);
 
+
+// * * * MAIN FUNCTION * * * //
 int main(void){
   /* Demonstrate algorithm */
 
@@ -44,6 +46,8 @@ int main(void){
   return 0;
 }
 
+
+// * * * HELPER FUNCTIONS * * * //
 void randomize(int *arr, int arrlen, int range){
   /* Fill array "arr" of length "arrlen" with random ints between 0
      and "range" */
