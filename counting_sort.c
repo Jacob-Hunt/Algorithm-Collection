@@ -12,69 +12,107 @@
  *
  */
 
+
+// * * * LIBRARIES * * * //
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-// function prototypes
+
+// * * * CONSTANT DEFINITIONS * * * //
+#define LENGTH 10
+#define RANGE 256
+
+
+// * * * FUNCTION PROTOTYPES * * * //
 void sort(int values[], int arraySize, int limit);
+void randomize(int *arr, int arrlen, int range);
+void printarr(int *arr, int arrlen);
 
-// main function demonstrates sort function
+
+// * * * MAIN FUNCTION * * * //
 int main(void){
-    // sample array to be sorted
-    int array[8] = {12, 8, 3, 72, 4, 1, 1, 9};
+  /* Demonstrate algorithm */
 
-    // get number of entries in array
-    int arraySize = sizeof(array)/sizeof(array[0]);
+  // Seed the pseudo-random number generator
+  srand(time(NULL));
 
-    // sort
-    sort(array, arraySize, 100);
+  // Introduce the program
+  printf("\n\n");
+  printf("* * * THE AMAZING MAGIC SORTING ALGORITHM * * *\n\n");
 
-    // print results
-    for (int i = 0; i < arraySize; i++){
-        printf("%i ", array[i]);
-    }
-    printf("\n");
-    return 0;
+  // Generate and print an array of random ints
+  int numbers[LENGTH];
+  randomize(numbers, LENGTH, RANGE);
+
+  printf("An array of random integers:\n");
+  printarr(numbers, LENGTH);
+  printf("\n");
+
+  // Sort the array
+  sort(numbers, LENGTH, RANGE);
+  printf("Putting it in the magic hat, tapping three times...\n\n");
+
+  // Print results
+  printf("The numbers are sorted!\n");
+  printarr(numbers, LENGTH);
+  printf("\nAnd now the world is a better place.\n\n\n");
+
+  return 0;
 }
 
  
-// counting sort algorithm, limit is max value of any
-// number in the array
-void sort(int values[], int arraySize, int limit)
-{
+// * * * SORTING ALGORITHM * * * //
+void sort(int values[], int arrlen, int range){
+  /* Implimentation of counting sort,
+     see https://en.wikipedia.org/wiki/Counting_sort */
 
-    // array for counting values
-    int countarray[limit];
-    
-    // prime the countarray with zeroes
-    for (int i = 0; i < limit; i++)
-    {
-        countarray[i] = 0;
+  // Array for counting values
+  int countarray[range];
+
+  // Set all values in countarray to 0
+  for (int i = 0; i < range; i++){
+    countarray[i] = 0;
+  }
+
+  // Count numbers in values[]
+  for (int i = 0; i < arrlen; i++){
+    countarray[values[i]] ++;
+  }
+
+  // Counter to keep track of algorithm's current position in values[]
+  int valuesPos = 0;
+
+  // put numbers back in values array in order                     
+  for (int i = 0; i < range; i++){
+    if (countarray[i] != 0){
+      for (int j = 0; j < countarray[i]; j++){
+        values[valuesPos] = i;
+        valuesPos ++;
+      }
     }
-    
-    // count numbers in values array
-    for (int i = 0; i < arraySize; i++)
-    {
-        countarray[values[i]] ++;
-    }
-    
-    
-    int values_position = 0; // counter to keep track of current position
-                             // in values[] for algorithm
-                             
-    // put numbers back in values array in order                     
-    for (int i = 0; i < limit; i++)
-    {
-        if (countarray[i] != 0)
-        {
-            for (int j = 0; j < countarray[i]; j++)
-            {
-                values[values_position] = i;
-                values_position ++;
-            }
-        }
-    }
-    
-    return;
+  }
+}
+
+
+// * * * HELPER FUNCTIONS * * * //
+void randomize(int *arr, int arrlen, int range){
+  /* Fill array "arr" of length "arrlen" with random ints between 0
+     and "range" */
+
+  for(int i = 0; i < arrlen; i++) 
+  {
+    arr[i] = rand() % range;
+  }
+}
+
+void printarr(int *arr, int arrlen){
+  /* Print array of ints "arr" of length "arrlen" */
+  printf("[");
+  for(int i = 0; i < arrlen - 1; i++){
+    printf("%i, ", arr[i]);
+  }
+  printf("%i]\n", arr[arrlen - 1]);
 }
 
 
