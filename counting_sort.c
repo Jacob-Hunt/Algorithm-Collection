@@ -20,7 +20,11 @@
 
 
 // * * * CONSTANT DEFINITIONS * * * //
+
+// Length of randomly generated array
 #define LENGTH 10
+
+// Upper limit for randomly generated numbers
 #define RANGE 256
 
 
