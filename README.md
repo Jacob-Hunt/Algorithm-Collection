@@ -1,6 +1,6 @@
 # Algorithm-Collection
 
-A collection of various algorithm implimentations in C
+A collection of various algorithm implimentations
 
 # File Notes
 
@@ -11,3 +11,5 @@ A collection of various algorithm implimentations in C
 "largest_prime.c": Calculates the largest prime factor of a number using a modified Trial Division algorithm (https://en.wikipedia.org/wiki/Trial_division)
 
 "random_array.c": Generates and prints an array of random integers
+
+"roman_numerals.js": Algorithm to convert integers from arabic to roman numerals
