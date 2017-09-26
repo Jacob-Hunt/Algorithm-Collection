@@ -1,6 +1,6 @@
 # Algorithm-Collection
 
-A collection of various algorithm implimentations
+A collection of various algorithm implimentations (and other short scripts)
 
 # File Notes
 
