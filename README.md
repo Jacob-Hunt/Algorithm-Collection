@@ -14,4 +14,6 @@ A collection of various algorithm implimentations (and other short scripts)
 
 "random_array.c": Generates and prints an array of random integers
 
+"recover.c": Recovers JPEG images which have been deleted from a disk image.  Solution to Problem Set 4 of Harvard University's massive-open-online-course CS50 (uploaded with permission of Professor David J. Malan). 
+
 "roman_numerals.js": Algorithm to convert integers from arabic to roman numerals
